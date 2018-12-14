@@ -12,26 +12,36 @@
   </head>
   <body>
     <div id="banner" class="container">
-      <h1 class="display-4">Hello, world!</h1>
+      <h1 class="display-4">Life Stress-O-Meter</h1>
     </div>
     <div class="container">
       <form action="{{ url_for('process_inputs') }}" method="post">
         <div class="form-group">
           <label for="input_name">First Name</label>
-          <input type="text" class="form-control" name="input_name"  id="input_name" placeholder="Fred Flintstone">
+          <input type="text" class="form-control" name="input_name"  id="input_name" placeholder="Greg">
         </div>
         <div class="form-group">
-          <label for="input_dropdown">Example select</label>
-          <select class="form-control" name="input_dropdown" id="input_dropdown">
-            <option>1 fish</option>
-            <option>2 fish</option>
-            <option>red fish</option>
-            <option>the spanish inquisition</option>
-            <option>blue fish</option>
+          <label for="input_sleep_dropdown">Average Hours of Sleep/Night</label>
+          <select class="form-control" name="input_sleep_dropdown" id="input_sleep_dropdown">
+            <option>Less than 4 Hours</option>
+            <option>4-6 Hours</option>
+            <option>6-7 Hours</option>
+            <option>7-8 Hours</option>
+            <option>More than 8 Hours</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="input_select">Example multiple select</label>
+          <label for="input_homework_dropdown">Average Hours of Homework/Night</label>
+          <select class="form-control" name="input_homework_dropdown" id="input_homework_dropdown">
+            <option>Less than 1 Hour</option>
+            <option>1-2 Hours</option>
+            <option>2-3 Hours</option>
+            <option>3-4 Hours</option>
+            <option>More than 4 Hours</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="input_select">Number of Final Exams Next Week</label>
           <select multiple class="form-control" name="input_select" id="input_select">
             <option>1</option>
             <option>2</option>
@@ -41,7 +51,7 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="input_freeform">Example textarea</label>
+          <label for="input_freeform">Tell me how you feel here...</label>
           <textarea class="form-control" name="input_freeform" id="input_freeform" rows="3"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
