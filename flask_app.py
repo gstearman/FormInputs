@@ -1,3 +1,20 @@
+#
+# Code2College FormInput Template Example
+#
+# This branch uses the basic template form example to create a Stress-o-meter Analyzer.
+# This example is an implementation of the original idea by Roberto S. in the class at PHS.
+# This example collects form input data with questions (hrs sleep/night, hrs homework/night, # final exams next week)
+# and uses the input provided to calculate a life stress score. It also asks for a free form text response on the question "How do you feel?".
+# It then returns a different output message with advice based upon the calculated stress score.
+#
+# This python code illustrates how to turn inputs into calculated values a few different ways:
+#   It uses dictionaries for input string key to value pairing for drop down fields
+#   It uses counts of good/bad keyword string matching in a free-form input box.
+# The code is here on the stress_test branch: https://github.com/gstearman/FormInputs.git
+# See this link for the source change diff in GitHub: https://github.com/mough/FormInputs/compare/master...gstearman:stress_test
+# The app may be running here:  http://gstearman.pythonanywhere.com
+#
+
 from flask import Flask, request, render_template
 app = Flask(__name__)
 
@@ -30,7 +47,7 @@ def process_inputs():
     freeform_list = freeform.split(" ") # create a list of all the words separated by spaces
 
     # Calculate stress score based upon fixed fields.
-    score = sleep_points[sleep] + homework_points[homework] + 2 * int(final_exams_to_take)
+    score = sleep_points[sleep] + homework_points[homework] + (2 * int(final_exams_to_take))
 
     # Look at freeform field and count bad words. Add 1 for each bad stress indicating words.
     for w in stress_red_flag_list:
