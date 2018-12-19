@@ -95,14 +95,17 @@ def process_inputs():
     message = 'Hello, ' + name + '. ' + 'Your life-stress index score is ' + str(score) + '.'
     if score > 70 :
         message = '* * * DANGER * * * ' + message + '  Your stress index is too high! Take a day off and play video games in your pajammas.'
+        return render_template("main_pageR.html", output=" %s " % message)
     elif score > 40 :
         message = message + 'Your stress index is OK. Watch TV to relax after you finish your homework and go to bed by 11 PM.'
+        return render_template("main_pageB.html", output=" %s " % message)
     else:
         message = message + 'Your stress index is great. You should stay up until midnight studying for final exams instead of watching TV tonight.'
+        return render_template("main_pageG.html", output=" %s " % message)
 
 #    return render_template("main_page.html", output=" %s " % str(x).replace('|+-','|+**-'))
 #    return render_template("main_page.html", input_data=str(x), output=" %s " % message)
-    return render_template("main_page.html", output=" %s " % message)
+#    return render_template("main_page.html", output=" %s " % message)
 # process_inputs
 
 
