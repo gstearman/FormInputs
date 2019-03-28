@@ -88,7 +88,8 @@ def process_inputs():
 
     # Log results to a file on the server using PrettyTable
     x.add_row([name, sleep, homework, final_exams_to_take, freeform,  score])
-    g = open('results.txt', 'w')
+    #g = open('results.txt', 'w')  # clear the file and start over.
+    g = open('web_results.txt', 'a')  # write to the end of the file so you don't lose data.
     g.write(str(x))
     g.close
 
@@ -123,9 +124,9 @@ def process_test_inputs(name, sleep, homework, final_exams_to_take, freeform):
 #
 
 # Open a file on the server for local test case results and write the heading to it.
-#g = open('results.txt', 'w')
-#g.write('Local Test Case Results:\n')
-#g.close
+g = open('results.txt', 'w')
+g.write('Local Test Case Results:\n')
+g.close
 
 # Just print to the console for local test results.
 print('\n\n\nLocal Test Case Results:\n')
@@ -154,7 +155,7 @@ x.clear_rows() # Remove the data from Julie_beta_tester2 from the table so web r
 
 print('\nNow recording real data captured from the web site:\n')
 # Open a file on the server for results and write the table header to it.
-g = open('results.txt', 'w')
+g = open('web_results.txt', 'a')
 g.write('Now recording real data captured from the web site:\n')
 g.close
 print("Done.")
