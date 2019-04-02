@@ -95,7 +95,7 @@ def process_inputs():
 
     message = 'Hello, ' + name + '. ' + 'Your life-stress index score is ' + str(score) + '.'
     if score > 70 :
-        message = '* * * DANGER * * * ' + message + '  Your stress index is too high! Take a day off and play video games in your pajammas.'
+        message = '* * * DANGER * * * ' + message + '  Your stress index is too high! Take a day off and play video games in your pajamas.'
         return render_template("main_pageR.html", output=" %s " % message)
     elif score > 40 :
         message = message + 'Your stress index is OK. Watch TV to relax after you finish your homework and go to bed by 11 PM.'
@@ -120,7 +120,7 @@ def process_test_inputs(name, sleep, homework, final_exams_to_take, freeform):
 
 
 #
-# Execution starts here
+# Execution starts here when you RUN the program for local testing.
 #
 
 # Open a file on the server for local test case results and write the heading to it.
