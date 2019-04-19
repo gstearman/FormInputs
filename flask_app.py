@@ -91,7 +91,7 @@ def process_inputs():
     #g = open('results.txt', 'w')  # clear the file and start over.
     g = open('web_results.txt', 'a')  # write to the end of the file so you don't lose data.
     g.write(str(x))
-    g.close
+    g.close()
 
     message = 'Hello, ' + name + '. ' + 'Your life-stress index score is ' + str(score) + '.'
     if score > 70 :
@@ -126,7 +126,7 @@ def process_test_inputs(name, sleep, homework, final_exams_to_take, freeform):
 # Open a file on the server for local test case results and write the heading to it.
 g = open('results.txt', 'w')
 g.write('Local Test Case Results:\n')
-g.close
+g.close()
 
 # Just print to the console for local test results.
 print('\n\n\nLocal Test Case Results:\n')
@@ -157,7 +157,7 @@ print('\nNow recording real data captured from the web site:\n')
 # Open a file on the server for results and write the table header to it.
 g = open('web_results.txt', 'a')
 g.write('Now recording real data captured from the web site:\n')
-g.close
+g.close()
 print("Done.")
 
 
